@@ -6,7 +6,7 @@ import { InfinityScrollProgress } from "./assets/infinity";
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
   const handleScroll = () => {
-    const position = window.pageYOffset;
+    const position = window.pageYOffset / window.innerHeight;
     setScrollPosition(position);
   };
 
@@ -19,19 +19,19 @@ function App() {
   }, []);
 
   return (
-    <div className="App" style={{ height: "400vh" }}>
+    <div className="App" style={{ height: "200vh" }}>
       <div
         style={{
           width: "50vh",
           height: "50vh",
           position: "fixed",
           top: "50%",
-          translate: "-50% -50%",
+          translate: "-50% -25%",
         }}
       >
         <InfinityScrollProgress progress={scrollPosition} />
       </div>
-      <div
+      {/* <div
         style={{
           width: "10vh",
           height: "10vh",
@@ -42,7 +42,7 @@ function App() {
         }}
       >
         <ScrollProgress progress={Math.max(scrollPosition - 500, 0)} />
-      </div>
+      </div> */}
     </div>
   );
 }
