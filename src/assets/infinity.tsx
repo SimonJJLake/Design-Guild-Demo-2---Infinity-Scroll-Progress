@@ -1,7 +1,7 @@
 export const InfinityScrollProgress: React.FC<{ progress: number }> = ({
   progress,
 }) => {
-  const value = Math.max(1.03 - progress, 0);
+  const value = Math.max(1 - progress, 0);
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="-1 -1 14 8">
       <g>
@@ -18,7 +18,7 @@ export const InfinityScrollProgress: React.FC<{ progress: number }> = ({
           stroke="#ffffff"
           stroke-width="1"
           fill="none"
-          strokeDasharray="1.03"
+          strokeDasharray="0.1666667"
           strokeDashoffset={`${value}`}
           strokeLinecap="round"
           pathLength={1}

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import { ScrollProgress } from "./assets/hi";
 import { InfinityScrollProgress } from "./assets/infinity";
+import { TextScrollProgress } from "./assets/text";
 
 function App() {
   const [scrollPosition, setScrollPosition] = useState(0);
@@ -22,6 +23,17 @@ function App() {
     <div className="App" style={{ height: "200vh" }}>
       <div
         style={{
+          width: "100vh",
+          height: "80vh",
+          position: "fixed",
+          top: "60%",
+          translate: "-50% -25%",
+        }}
+      >
+        <TextScrollProgress progress={scrollPosition} />
+      </div>
+      {/* <div
+        style={{
           width: "50vh",
           height: "50vh",
           position: "fixed",
@@ -30,7 +42,7 @@ function App() {
         }}
       >
         <InfinityScrollProgress progress={scrollPosition} />
-      </div>
+      </div> */}
       {/* <div
         style={{
           width: "10vh",
@@ -41,7 +53,7 @@ function App() {
           translate: "-50% -50%",
         }}
       >
-        <ScrollProgress progress={Math.max(scrollPosition - 500, 0)} />
+        <ScrollProgress progress={scrollPosition} />
       </div> */}
     </div>
   );

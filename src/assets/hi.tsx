@@ -1,8 +1,7 @@
 export const ScrollProgress: React.FC<{ progress: number }> = ({
   progress,
 }) => {
-  console.log(progress);
-  const value = 200 + progress / 30;
+  const value = Math.max(1 - progress, 0);
   return (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 8">
       <g>
@@ -19,8 +18,9 @@ export const ScrollProgress: React.FC<{ progress: number }> = ({
           stroke="#ffffff"
           stroke-width="1"
           fill="none"
-          strokeDasharray={`${value}`}
-          strokeDashoffset="200"
+          strokeDashoffset={`${value}`}
+          strokeDasharray="1"
+          pathLength={1}
         />
       </g>
     </svg>
